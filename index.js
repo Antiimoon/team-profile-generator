@@ -168,3 +168,7 @@ const managerQuestions = () => {
         compileTeamMember();
     });
 };
+
+const deleteHtml = () => {
+    fs.unlinkSync('./index.html');
+};

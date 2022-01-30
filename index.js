@@ -57,3 +57,40 @@ const question1 = () => {
 };
 
 question1();
+
+//engineer questions
+const engineerQuestions = () => {
+    inquirer
+    .prompt ([
+        {
+            type: 'input',
+            name: 'name',
+            message: 'What is engineers name?',
+        },
+        {
+            type: 'input',
+            name: 'id',
+            message: 'What is engineers id number?',
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: 'What is engineers email?',
+        },
+        {
+            type: 'input',
+            name: 'github',
+            message: 'What is engineers github username (case sensitive)?',
+        },
+    ])
+    .then((answers) => {
+        const newEngineer = new Engineer (
+            answers.name,
+            answers.id,
+            answers.email,
+            answers.github
+        );
+        engineers.push(newEngineer);
+        compileTeamMember();
+    });
+};

@@ -131,3 +131,40 @@ const internQuestions = () => {
         compileTeamMember();
     });
 };
+
+//manager questions
+const managerQuestions = () => {
+    inquirer
+    .prompt ([
+        {
+            type: 'input',
+            name: 'name',
+            message: 'What is the managers name?',
+        },
+        {
+            type: 'input',
+            name: 'id',
+            message: 'What is the managers id number?',
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: 'What is the managers email?',
+        },
+        {
+            type: 'input',
+            name: 'officeNumber',
+            message: 'What is the managers office number?',
+        },
+    ])
+    .then((answers) => {
+        const newManager = new Manager(
+            answers.name,
+            answers.id,
+            answers.email,
+            answers.officeNumber,
+        );
+        managers.push(newManager);
+        compileTeamMember();
+    });
+};

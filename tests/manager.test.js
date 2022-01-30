@@ -10,14 +10,14 @@ describe("Manager", () => {
     describe("officeNumber", () => {
         it("should create new officeNumber", () => {
           const obj = new Manager("Joe", 1, "Joe@email.com", 123);
-          expect(obj.officeNumber).toEqual(512);
+          expect(obj.officeNumber).toEqual(123);
         });
     });
 
     describe("getOfficeNumber", () => {
         it("can return school by getOfficeNumber method", () => {
           const obj = new Manager("Joe", 1, "Joe@email.com", 123);
-          expect(obj.getOfficeNumber()).toEqual(512);
+          expect(obj.getOfficeNumber()).toEqual(123);
         });
     });
 

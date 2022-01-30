@@ -1,0 +1,14 @@
+.jumbotron {
+    color: whitesmoke;
+    text-shadow: black 1px 1px;
+}
+
+.card-custom {
+    color: #000000;
+    text-shadow: white 1px 1px;
+    max-width: 500px;
+}
+
+.employee {
+    padding-left: 2px;
+}

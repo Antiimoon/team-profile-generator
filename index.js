@@ -94,3 +94,40 @@ const engineerQuestions = () => {
         compileTeamMember();
     });
 };
+
+//intern questions
+const internQuestions = () => {
+    inquirer
+    .prompt ([
+        {
+            type: 'input',
+            name: 'name',
+            message: 'What is the interns name?',
+        },
+        {
+            type: 'input',
+            name: 'id',
+            message: 'What is the interns id number?',
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: 'What is the interns email?',
+        },
+        {
+            type: 'input',
+            name: 'school',
+            message: 'What school did the intern attend?',
+        },
+    ])
+    .then((answers) => {
+        const newIntern = new Intern (
+            answers.name,
+            answers.id,
+            answers.email,
+            answers.school,
+        );
+        interns.push(newIntern);
+        compileTeamMember();
+    });
+};

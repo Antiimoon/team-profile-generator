@@ -27,9 +27,11 @@ const compileTeamMember = () => {
             module.exports = engineers;
             module.exports = interns;
             deleteHtml();
+            topHtmlFile();
             managerGenerator();
             engineerGenerator();
             internGenerator();
+            bottomHtmlFile();
             return answers;
         }
     });
@@ -171,4 +173,30 @@ const managerQuestions = () => {
 
 const deleteHtml = () => {
     fs.unlinkSync('./index.html');
+};
+
+const topHtmlFile = () => {
+    fs.appendFileSync('index.html', generateHTML());
+};
+
+const managerGenerator = () => {
+    managers.forEach((manager => {
+        fs.appendFileSync('index.html', generateMgr(manager));
+    }));
+};
+
+const engineerGenerator = () => {
+    engineers.forEach((engineer => {
+        fs.appendFileSync('index.html', generateEng(engineer));
+    }));
+};
+
+const internGenerator = () => {
+    interns.forEach((intern => {
+        fs.appendFileSync('index.html', generateIntern(intern));
+    }));
+};
+
+const bottomHtmlFile = () => {
+    fs.appendFileSync('index.html', generateBtm());
 };
